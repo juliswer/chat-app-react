@@ -25,6 +25,12 @@ const Auth = () => {
           [e.target.name]: e.target.value
         })
     };
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        console.log(form);
+    }
 
   const switchMode = () => {
     setIsSignUp((prevIsSignup) => !prevIsSignup);
@@ -35,7 +41,7 @@ const Auth = () => {
       <div className="auth__form-container_fields">
         <div className="auth__form-container_fields-content">
           <p>{isSignUp ? "Sign Up" : "Sign In"}</p>
-          <form onSubmit={{}}>
+          <form onSubmit={handleSubmit}>
             {isSignUp && (
               <div className="auth__form-container_fields-content_input">
                 <label htmlFor="fullName">Full Name</label>
@@ -43,7 +49,7 @@ const Auth = () => {
                   type="text"
                   name="fullName"
                   placeholder="Full Name"
-                  onchange={handleChange}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -54,7 +60,7 @@ const Auth = () => {
                 type="text"
                 name="username"
                 placeholder="Username"
-                onchange={handleChange}
+                onChange={handleChange}
                 required
               />
             </div>
@@ -65,7 +71,7 @@ const Auth = () => {
                   type="text"
                   name="phoneNumber"
                   placeholder="Phone Number"
-                  onchange={handleChange}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -77,7 +83,7 @@ const Auth = () => {
                   type="text"
                   name="avatarURL"
                   placeholder="Avatar URL"
-                  onchange={handleChange}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -88,7 +94,7 @@ const Auth = () => {
                       type="password"
                       name="password"
                       placeholder="Password"
-                      onchange={handleChange}
+                      onChange={handleChange}
                       required
                     />
                 </div>
@@ -99,11 +105,14 @@ const Auth = () => {
                       type="password"
                       name="confirmPassword"
                       placeholder="Confirm Password"
-                      onchange={handleChange}
+                      onChange={handleChange}
                       required
                     />
                 </div>
             )}
+            <div className="auth__form-container_fields-content_button">
+                <button>{isSignUp ? "Sign Up" : "Sign In"}</button>
+            </div>
           </form>
             <div className="auth__form-container_fields-account">
                 <p>
