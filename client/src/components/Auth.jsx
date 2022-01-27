@@ -49,6 +49,28 @@ const Auth = () => {
                 />
               </div>
             )}
+            {isSignUp && (
+              <div className="auth__form-container_fields-content_input">
+                <label htmlFor="avatarURL">Avatar URL</label>
+                <input
+                  type="text"
+                  name="avatarURL"
+                  placeholder="Avatar URL"
+                  onchange={handleChange}
+                  required
+                />
+              </div>
+            )}
+            <div className="auth__form-container_fields-content_input">
+                <label htmlFor="password">Password</label>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  onchange={handleChange}
+                  required
+                />
+              </div>
           </form>
         </div>
       </div>
