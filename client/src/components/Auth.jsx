@@ -9,6 +9,10 @@ const Auth = () => {
 
   const handleChange = () => {};
 
+  const switchMode = () => {
+    setIsSignUp((prevIsSignup) => !prevIsSignup);
+  }
+
   return (
     <div className="auth__form-container">
       <div className="auth__form-container_fields">
@@ -61,17 +65,37 @@ const Auth = () => {
                 />
               </div>
             )}
-            <div className="auth__form-container_fields-content_input">
-                <label htmlFor="password">Password</label>
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  onchange={handleChange}
-                  required
-                />
-              </div>
+                <div className="auth__form-container_fields-content_input">
+                    <label htmlFor="password">Password</label>
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      onchange={handleChange}
+                      required
+                    />
+                </div>
+            {isSignUp && (
+                <div className="auth__form-container_fields-content_input">
+                    <label htmlFor="confirmPassword">Confirm Password</label>
+                    <input
+                      type="password"
+                      name="confirmPassword"
+                      placeholder="Confirm Password"
+                      onchange={handleChange}
+                      required
+                    />
+                </div>
+            )}
           </form>
+            <div className="auth__form-container_fields-account">
+                <p>
+                    {isSignUp ? "Already have an account?" : "Don't have an account?"}
+                    <span onClick={switchMode}>
+                        {isSignUp ? "Sign In" : "Sign Up"}
+                    </span>
+                </p>
+            </div>
         </div>
       </div>
     </div>
