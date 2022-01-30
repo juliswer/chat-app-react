@@ -2,7 +2,7 @@ import React from 'react';
 
 import {AddChannel} from '../assets'
 
-const TeamChannelList = ({children, error = false, loading, type}) => {
+const TeamChannelList = ({children, error = false, loading, type, isCreating, setIsCreating, setCreateType, setIsEditing}) => {
 
     if(error) {
         return type === 'team' ? (
@@ -25,6 +25,7 @@ const TeamChannelList = ({children, error = false, loading, type}) => {
         <div className="team-channel-list__header">
             <p className="team-channel-list__header__title">{type === 'team' ? 'Channels' : 'Direct Messages'} loading...</p>
             {/*Button - add Channel*/}
+            <AddChannel />
         </div>
         {children}
     </div>
