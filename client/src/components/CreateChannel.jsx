@@ -7,7 +7,7 @@ const ChannelNameInput = ({channelName = '', setChannelName}) => {
   return (
     <div className="channel-name-input__wrapper">
       <p>Name</p>
-      <input value={} onChange={} placeholder="channel-name (no spaces!)" />
+      <input value={} onChange={} placeholder="channel-name (no spaces)" />
     </div>
   )
 }
